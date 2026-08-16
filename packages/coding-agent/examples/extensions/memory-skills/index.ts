@@ -1,6 +1,6 @@
 /**
  * Memory + Skills extension — Hermes-style persistent memory and auto-generated
- * skills for pi. Ported from Athena Agent.
+ * skills for Aegis. Ported from Athena Agent.
  *
  * Features:
  *   - MEMORY.md persistent facts (loaded into the system prompt each turn)
@@ -8,8 +8,8 @@
  *   - skill_create tool (auto-generate a reusable SKILL.md from a workflow)
  *   - /memory command to view facts
  *
- * Memory file: ~/.pi/agent/memory/MEMORY.md
- * Generated skills: ~/.pi/agent/skills/generated/<name>/SKILL.md
+ * Memory file: ~/.aegis/agent/memory/MEMORY.md
+ * Generated skills: ~/.aegis/agent/skills/generated/<name>/SKILL.md
  */
 import { mkdir, readFile, writeFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
@@ -24,11 +24,11 @@ import { defineTool, type ExtensionAPI, type ExtensionCommandContext } from "@ea
 const MEMORY_FILE = "MEMORY.md";
 
 function memoryPath(): string {
-	return join(homedir(), ".pi", "agent", "memory", MEMORY_FILE);
+	return join(homedir(), ".aegis", "agent", "memory", MEMORY_FILE);
 }
 
 function skillsGeneratedDir(): string {
-	return join(homedir(), ".pi", "agent", "skills", "generated");
+	return join(homedir(), ".aegis", "agent", "skills", "generated");
 }
 
 async function readMemory(): Promise<string> {
@@ -54,7 +54,7 @@ async function appendFact(fact: string, source?: string): Promise<void> {
 	const line = `- ${fact.trim()}${source ? ` (from: ${source})` : ""} [${date}]`;
 	const doc = existing
 		? `${existing.replace(/\n*$/, "")}\n${line}\n`
-		: `# Pi Memory\n\nPersistent facts about the user, preferences, and decisions.\n\n${line}\n`;
+		: `# Aegis Memory\n\nPersistent facts about the user, preferences, and decisions.\n\n${line}\n`;
 	await mkdir(join(memoryPath(), ".."), { recursive: true });
 	await writeFile(memoryPath(), doc, "utf8");
 }

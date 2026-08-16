@@ -1,5 +1,5 @@
 /**
- * RLM extension — Recursive Language Models (arXiv:2512.24601) for pi.
+ * RLM extension — Recursive Language Models (arXiv:2512.24601) for Aegis.
  *
  * Ported from Athena Agent. The prompt lives as a variable `P` in a sandboxed
  * REPL (node:vm); the model writes code to probe/decompose it and recursively

@@ -1,6 +1,6 @@
 /**
  * Permissions + Effort extension — access control for tool execution and a
- * compute dial for pi. Ported from Athena Agent.
+ * compute dial for Aegis. Ported from Athena Agent.
  *
  * Permission modes:
  *   safe       (default) — read-only tools auto-allowed; sensitive tools ask.
@@ -46,7 +46,7 @@ interface EffortConfig {
 // Persistence
 // ============================================================================
 
-const CONFIG_PATH = join(homedir(), ".pi", "agent", "permissions-effort.json");
+const CONFIG_PATH = join(homedir(), ".aegis", "agent", "permissions-effort.json");
 
 async function loadConfig(): Promise<{ permissions: PermissionConfig; effort: EffortConfig }> {
 	try {

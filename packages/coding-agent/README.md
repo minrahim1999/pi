@@ -12,6 +12,22 @@
 
 ---
 
+# Aegis
+
+**Aegis** is a personal AI agent harness built on top of [pi](https://github.com/earendil-works/pi). It keeps pi's minimal terminal coding harness and adds a set of agent features ported from [Athena Agent](https://github.com/minrahim1999/athena-agent):
+
+- **Recursive Language Models (RLM/SRLM/Chained-RLM)** — `/rlm` runs the RLM paradigm (arXiv:2512.24601) where the prompt lives as a variable in a sandboxed REPL.
+- **Hermes-style memory & skills** — `memory_read`/`memory_write`/`memory_search`/`skill_create` tools + a `/memory` command; MEMORY.md facts are injected into the system prompt each turn.
+- **Messaging gateway** — `/gateway` connects Aegis to Telegram, Discord, Slack, WhatsApp, and Matrix as a headless bot.
+- **Permissions & effort** — `/permissions` (safe/auto/restricted + per-tool rules), `/effort` (low→xhigh), and `/fast`.
+- **Session export/import** — `/session export/import` with optional AES-256-GCM encryption.
+
+The binary is `aegis` and the config directory is `~/.aegis/agent/`.
+
+---
+
+## Pi (upstream)
+
 Pi is a minimal terminal coding harness. Adapt pi to your workflows, not the other way around, without having to fork and modify pi internals. Extend it with TypeScript [Extensions](#extensions), [Skills](#skills), [Prompt Templates](#prompt-templates), and [Themes](#themes). Put your extensions, skills, prompt templates, and themes in [Pi Packages](#pi-packages) and share them with others via npm or git.
 
 Pi ships with powerful defaults but skips features like sub agents and plan mode. Instead, you can ask pi to build what you want or install a third party pi package that matches your workflow.

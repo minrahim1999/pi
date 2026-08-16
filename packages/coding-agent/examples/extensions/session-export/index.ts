@@ -1,8 +1,8 @@
 /**
- * Session Export/Import extension — export and import pi sessions.
+ * Session Export/Import extension — export and import Aegis sessions.
  * Ported from Athena Agent (with optional AES-256-GCM encryption).
  *
- * pi stores sessions as append-only JSONL files in ~/.pi/agent/sessions/.
+ * Aegis stores sessions as append-only JSONL files in ~/.aegis/agent/sessions/.
  * This extension reads the current session's JSONL and exports it (optionally
  * encrypted with a passphrase), and imports by writing a JSONL file into the
  * sessions directory.
@@ -65,7 +65,7 @@ function decryptString(payload: EncryptedPayload, passphrase: string): string {
 // ============================================================================
 
 function sessionsDir(): string {
-	return join(homedir(), ".pi", "agent", "sessions");
+	return join(homedir(), ".aegis", "agent", "sessions");
 }
 
 /** Read the current session's JSONL file (all entries). */

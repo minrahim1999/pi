@@ -1,5 +1,5 @@
 /**
- * Messaging Gateway extension — connect pi to messaging platforms as a headless
+ * Messaging Gateway extension — connect Aegis to messaging platforms as a headless
  * bot. Ported from Athena Agent (OpenClaw-style control plane, minimal).
  *
  * Supported channels:
